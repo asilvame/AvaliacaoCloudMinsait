@@ -1,8 +1,8 @@
 image:
   file: .gitpod.Dockerfile
-tasks:
-  - name: bash
-    command: bash
+#tasks:
+#  - name: bash
+#    command: bash
 #  - name: tailscaled
 #    command: |
 #      if [ -n "${TS_STATE_TAILSCALE_EXAMPLE}" ]; then
