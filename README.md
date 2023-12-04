@@ -1,4 +1,6 @@
 # AvaliacaoCloudMinsait
+## Instruções 
+- https://mmaximiliano.notion.site/mmaximiliano/Desafio-Avaliativo-Cloud-Minsait-07ddef2bbb1741069592632a5da1c0f3
 ## Requirements
 
 - Java 17 
