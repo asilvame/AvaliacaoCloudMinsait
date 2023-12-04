@@ -1,8 +1,7 @@
-ARG SOURCE_GIT
 FROM openjdk:17-alpine as builder
 RUN apk update && apk add --no-cache maven git
 WORKDIR /opt/app
-RUN cd /opt/app && git clone ${SOURCE_GIT} AvaliacaoCloudMinsait
+RUN cd /opt/app && git clone https://github.com/asilvame/AvaliacaoCloudMinsait AvaliacaoCloudMinsait
 RUN cd /opt/app/AvaliacaoCloudMinsait && mvn clean dependency:copy-dependencies install -DskipTests 
 RUN cp /opt/app/AvaliacaoCloudMinsait/target/dependency/* /opt/app/.
 FROM openjdk:17-alpine
