@@ -14,10 +14,14 @@ tasks:
       if [ -n "${TS_STATE_TAILSCALE_EXAMPLE}" ]; then
         sudo -E tailscale up
       else
-        sudo -E tailscale up --hostname "gitpod-${GITPOD_GIT_USER_NAME// /-}-$(echo ${GITPOD_WORKSPACE_CONTEXT} | jq -r .repository.name)"
+        sudo -E tailscale up --hostname "gitpod-${GITPOD_GIT_USER_EMAIL//@*/}-$(echo ${GITPOD_WORKSPACE_CONTEXT} | jq -r .repository.name)"
         # store the tailscale state into gitpod user
         gp env TS_STATE_TAILSCALE_EXAMPLE="$(sudo cat /var/lib/tailscale/tailscaled.state)"
       fi
 vscode:
   extensions:
     - vscjava.vscode-java-pack
+    - vscjava.vscode-maven
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-dependency
+    - vscjava.vscode-java-test
