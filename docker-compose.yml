@@ -29,5 +29,3 @@ services:
       MYSQL_USER: pp_user
       MYSQL_PASSWORD: pp_user
       MYSQL_ROOT_PASSWORD: root_password
-## Referencia docker
-#https://stackoverflow.com/questions/69525199/openjdk-java-17-docker-image      
