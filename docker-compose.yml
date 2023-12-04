@@ -8,6 +8,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
+      SOURCE_GIT: https://github.com/asilvame/AvaliacaoCloudMinsait
       DATABASE_URL: jdbc:mysql://db:3306/users_db
       DATABASE_USERNAME: pp_user
       DATABASE_PASSWORD: pp_user
