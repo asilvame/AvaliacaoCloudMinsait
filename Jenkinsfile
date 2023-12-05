@@ -5,7 +5,7 @@ pipeline {
         stage ("Build Image"){
             steps {
                 script {
-                    dockerapp = docker.build("mesquita/sampletodoaula3:v${env.BUILD_ID}", '-f ./dockerfile .')
+                    dockerapp = docker.build("mesquita/app:v${env.BUILD_ID}", '-f Dockerfile .')
                 }
             }
         }
