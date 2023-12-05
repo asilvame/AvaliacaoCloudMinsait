@@ -24,7 +24,7 @@ pipeline {
             steps{
                 withKubeConfig([credentialsId: 'kubeconfig']){
                     // sh "echo 'passou' "
-                    sh "cd cd /var/jenkins_home/workspace/AvaliacaoCloudMinsait/k8s && kubectl apply -f app-service.yaml,app-deployment.yaml,avaliacao-network-networkpolicy.yaml,db-deployment.yaml,db-service.yaml"
+                    sh "cd /var/jenkins_home/workspace/AvaliacaoCloudMinsait/k8s && kubectl apply -f app-service.yaml,app-deployment.yaml,avaliacao-network-networkpolicy.yaml,db-deployment.yaml,db-service.yaml"
                     // sh "kubectl set image deployment/web web=matheusmprado/sampletodoaula3:latest"
                 }
             }
