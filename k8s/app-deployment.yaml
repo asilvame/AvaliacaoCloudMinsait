@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: app
+  name: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: app
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/avaliacao-network: "true"
+        io.kompose.service: app
+    spec:
+      containers:
+        - env:
+            - name: DATABASE_PASSWORD
+              value: pp_user
+            - name: DATABASE_URL
+              value: jdbc:mysql://db:3306/users_db
+            - name: DATABASE_USERNAME
+              value: pp_user
+          image: mesquita/app
+          name: app
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}
