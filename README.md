@@ -12,5 +12,4 @@ A [Gitpod](https://gitpod.io/) configuration is available for these exercises. Y
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/asilvame/AvaliacaoCloudMinsait)
 
-## Evidencias
-[![Open in Gitpod](./evidencias/README.md ]
+## [[evidencias](./evidencias/README.md ]
