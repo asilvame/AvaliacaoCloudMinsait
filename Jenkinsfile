@@ -23,8 +23,8 @@ pipeline {
         stage ("Deploy Kubernetes"){
             steps{
                 withKubeConfig([credentialsId: 'kubeconfig']){
-                    sh "echo 'passou' "
-                    sh " kubectl apply -f ./k8s/app-service.yaml,./k8s/app-deployment.yaml,./k8s/avaliacao-network-networkpolicy.yaml,./k8s/db-deployment.yaml,./k8s/db-service.yaml"
+                    // sh "echo 'passou' "
+                    sh "cd k8s && kubectl apply -f app-service.yaml,app-deployment.yaml,avaliacao-network-networkpolicy.yaml,db-deployment.yaml,db-service.yaml"
                     // sh "kubectl set image deployment/web web=matheusmprado/sampletodoaula3:latest"
                 }
             }
