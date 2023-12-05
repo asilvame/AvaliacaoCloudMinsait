@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry("https://registry.hub.docker.com",'dockerhub'){
-                        dockerapp.push("v${env.BUILD_ID}")
+                        #dockerapp.push("v${env.BUILD_ID}")
                         dockerapp.push("latest")
                     }
                 }
@@ -24,7 +24,7 @@ pipeline {
             steps{
                 withKubeConfig([credentialsId: 'kubeconfig']){
                     sh "echo 'passou' "
-                    // sh "kubectl apply -f ./k8s/deployment.yaml"
+                    sh " kubectl apply -f ./k8s/app-service.yaml,./k8s/app-deployment.yaml,./k8s/avaliacao-network-networkpolicy.yaml,./k8s/db-deployment.yaml,./k8s/db-service.yaml"
                     // sh "kubectl set image deployment/web web=matheusmprado/sampletodoaula3:latest"
                 }
             }
