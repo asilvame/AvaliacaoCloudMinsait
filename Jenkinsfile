@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages{
-        stage ("Build Image"){
+        stage ("Build Image com test "){
             steps {
                 script {
                     dockerapp = docker.build("mesquita/app:v${env.BUILD_ID}", '-f Dockerfile .')
